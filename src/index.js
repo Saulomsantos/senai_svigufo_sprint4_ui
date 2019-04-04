@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './index.css';
-import App from './pages/Home/App';
+import App from '../src/pages/Home/App';
 import TiposEventos from './pages/TiposEventos/TiposEventos';
 import NotFound from './pages/NotFound/NotFound';
 import * as serviceWorker from './serviceWorker';

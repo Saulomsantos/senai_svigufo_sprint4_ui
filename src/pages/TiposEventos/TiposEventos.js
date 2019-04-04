@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import '../../assets/css/flexbox.css';
 import '../../assets/css/reset.css';
@@ -7,6 +8,8 @@ import '../../assets/css/style.css';
 import logo from '../../assets/img/icon-login.png';
 
 import Rodape from '../../components/Rodape/Rodape';
+
+
 
 class TiposEventos extends Component {
     constructor(){
@@ -21,10 +24,14 @@ class TiposEventos extends Component {
     }
 
     buscarTiposEventos(){
-        fetch('http://localhost:5000/Api/TiposEventos/')
-        .then(resposta => resposta.json())
-        .then(data => this.setState({lista : data}))
-        .catch((erro) => console.log(erro))
+        // fetch('http://localhost:5000/Api/TiposEventos/')
+        // .then(resposta => resposta.json())
+        // .then(data => this.setState({lista : data}))
+        // .catch((erro) => console.log(erro))
+        axios.get('http://192.168.3.114:5000/Api/TiposEventos')
+            .then(resposta => console.log(resposta.data))
+            // .then(data => this.setState({lista : data}))
+            //.catch((erro) => console.log(erro))
     }
 
     componentDidMount(){
@@ -38,19 +45,23 @@ class TiposEventos extends Component {
     cadastraTipoEvento(event) {
         event.preventDefault();
 
-        fetch('http://localhost:5000/Api/TiposEventos/',
-            {
-                method : 'POST',
-                body : JSON.stringify({nome : this.state.nome}),
-                crossDomain : true,
-                headers : {
-                    "Content-Type" : "application/json"
-                }
-            })
+        // fetch('http://localhost:5000/Api/TiposEventos/',
+        //     {
+        //         method : 'POST',
+        //         body : JSON.stringify({nome : this.state.nome}),
+        //         crossDomain : true,
+        //         headers : {
+        //             "Content-Type" : "application/json"
+        //         }
+        //     })
+        // .then(resposta => resposta)
+        // .then(this.buscarTiposEventos())
+        // .catch(erro => console.log(erro))
+
+        axios.post('http://localhost:5000/Api/TiposEventos/', {nome : this.state.nome})
         .then(resposta => resposta)
         .then(this.buscarTiposEventos())
         .catch(erro => console.log(erro))
-
     }
 
 
@@ -108,7 +119,7 @@ class TiposEventos extends Component {
                             id="nome-tipo-evento" 
                             placeholder="tipo do evento" 
                         />
-                        <button className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro">
+                        <button type="submit" className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro">
                             Cadastrar
                         </button>
                         </div>
