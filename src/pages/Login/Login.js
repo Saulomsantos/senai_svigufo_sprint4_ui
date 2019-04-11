@@ -82,9 +82,7 @@ class Login extends Component {
                                     id="login__password"/>
                             </div>
                             <div>
-                                <p className="text__login" style={{ color : 'red',  textAlign : 'center' }}>
-                                    {this.state.erroMensagem}
-                                </p>
+                                <p className="text__login" style={{ color : 'red',  textAlign : 'center' }}>{this.state.errorMessage}</p>
                             </div>
                             <div className="item">
                                 <button type="submit" className="btn btn__login" id="btn__login">

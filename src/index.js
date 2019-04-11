@@ -10,12 +10,11 @@ import Login from './pages/Login/Login';
 import * as serviceWorker from './serviceWorker';
 import { usuarioAutenticado } from './services/auth';
 
-const Permissao = ( { component: Component } ) => (
+const Permissao = ( { component : Component } ) => (
     <Route
-        render = {
-            props => usuarioAutenticado() ?
+        render = {props => usuarioAutenticado() ?
             (<Component {...props} />) :
-            (<Redirect to={{ pathname: '/login' }} />)
+            (<Redirect to={{ pathname : '/login' }} />)
         }
     />
 );
@@ -25,7 +24,7 @@ const routing = (
         <div>
             <Switch>
                 <Route exact path="/" component={App}/>
-                <Route path="/tiposeventos" component={TiposEventos}/>
+                <Permissao path="/tiposeventos" component={TiposEventos}/>
                 <Route path="/login" component={Login} />
                 <Route component={NotFound}/>
             </Switch>
