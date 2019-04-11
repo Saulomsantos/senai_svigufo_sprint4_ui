@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import logo from '../../assets/img/icon-login.png';
 
-import '../../assets/css/login.css';
+//import '../../assets/css/login.css';
 
 import Axios from 'axios';
 
@@ -53,7 +53,7 @@ class Login extends Component {
                     <div className="item__login">
                         <div className="row">
                             <div className="item">
-                                <img src={logo} className="icone__login" />
+                                <img src={logo} className="icone__login" alt="descricaos"/>
                             </div>
                             <div className="item" id="item__title">
                                 <p className="text__login" id="item__description">

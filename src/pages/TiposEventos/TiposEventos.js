@@ -13,7 +13,7 @@ class TiposEventos extends Component {
     constructor(){
         super();
         this.state = {
-            lista : [],
+            listaTiposEventos : [],
             nome : "",
             tituloPagina : "Lista Tipos Eventos"
         }
@@ -25,7 +25,7 @@ class TiposEventos extends Component {
     buscarTiposEventos(){
         fetch('http://localhost:5000/Api/TiposEventos/')
         .then(resposta => resposta.json())
-        .then(data => this.setState({lista : data}))
+        .then(data => this.setState({listaTiposEventos : data}))
         .catch((erro) => console.log(erro))
     }
 
@@ -79,7 +79,7 @@ class TiposEventos extends Component {
 
                                 <tbody>
                                     {
-                                        this.state.lista.map(function(tipoevento){
+                                        this.state.listaTiposEventos.map(function(tipoevento){
                                             return (
                                                 <tr key={tipoevento.id}>
                                                     <td>{tipoevento.id}</td>

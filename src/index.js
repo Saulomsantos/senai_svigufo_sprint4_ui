@@ -6,6 +6,7 @@ import App from './pages/Home/App';
 import TiposEventos from './pages/TiposEventos/TiposEventos';
 import NotFound from './pages/NotFound/NotFound';
 import Login from './pages/Login/Login';
+import CadastroEvento from './pages/Eventos/Cadastro';
 
 import * as serviceWorker from './serviceWorker';
 import { usuarioAutenticado } from './services/auth';
@@ -26,6 +27,7 @@ const routing = (
                 <Route exact path="/" component={App}/>
                 <Permissao path="/tiposeventos" component={TiposEventos}/>
                 <Route path="/login" component={Login} />
+                <Route path="/eventos" component={CadastroEvento}/>
                 <Route component={NotFound}/>
             </Switch>
         </div>
