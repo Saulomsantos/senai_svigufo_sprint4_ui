@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+
+import logo from '../../assets/img/icon-login.png';
 
 import '../../assets/css/flexbox.css';
 import '../../assets/css/reset.css';
 import '../../assets/css/style.css';
-
-import logo from '../../assets/img/icon-login.png';
 
 import Rodape from '../../components/Rodape/Rodape';
 
@@ -20,7 +21,7 @@ class App extends Component {
               <a>Home</a>
               <a>Eventos</a>
               <a>Contato</a>
-              <a className="cabecalhoPrincipal-nav-login" href="login.html">Login</a>
+              <Link className="cabecalhoPrincipal-nav-login" to="/login">Login</Link>
             </nav>
           </div>
         </header>
